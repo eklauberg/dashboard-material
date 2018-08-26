@@ -1,5 +1,5 @@
-import { drawerWidth } from "../../constants";
-import { toolbar } from "../../similar";
+import { drawerWidth } from "../constants";
+import { toolbar } from "../similar";
 
 export default theme => ({
   drawerPaper: {
