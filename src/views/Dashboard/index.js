@@ -1,9 +1,15 @@
 import React from "react";
 import { withStyles, Typography } from "@material-ui/core";
-import { Page } from "../components";
-import DashboardStyle from "../assets/jss/views/DashboardStyle";
+import { Page } from "../../components";
+import DashboardStyle from "../../assets/jss/views/DashboardStyle";
+import BaseView from "../BaseView";
+import DashboardController from "./controller";
 
-class Dashboard extends React.Component {
+class Dashboard extends BaseView {
+  constructor(props) {
+    super(props, DashboardController);
+  }
+
   render() {
     return (
       <Page>
