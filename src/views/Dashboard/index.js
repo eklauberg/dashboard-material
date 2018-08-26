@@ -25,6 +25,10 @@ class Dashboard extends BaseView {
     this.controller.init();
   }
 
+  componentWillUnmount() {
+    this.controller.unmount();
+  }
+
   dashboardRender() {
     return (
       <Page>
