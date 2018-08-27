@@ -43,6 +43,34 @@ export default class DashboardController extends BaseController {
     return data;
   }
 
+  chartData2() {
+    const { history, realtime } = this.state;
+    const serversHistory = Object.entries(history.servers);
+    const serversRealtime = Object.entries(realtime.servers);
+
+    delete serversHistory.all;
+    delete serversRealtime.all;
+
+    const mapa = {};
+
+    serversHistory.map(server => {
+      mapa[server[0]] = { recorde: server[1].total };
+    });
+
+    serversRealtime.map(server => {
+      mapa[server[0]] = {
+        recorde: (mapa[server[0]] && mapa[server[0]].recorde) || 0,
+        total: server[1].total || 0
+      };
+    });
+
+    const data = Object.entries(mapa).map(o => {
+      return { name: `${o[0]}`, ...o[1] };
+    });
+    console.log(data);
+    return data;
+  }
+
   unmount() {
     clearInterval(this.interval);
   }
