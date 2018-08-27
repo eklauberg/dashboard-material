@@ -19,6 +19,30 @@ export default class DashboardController extends BaseController {
     });
   }
 
+  chartData() {
+    const { history, realtime } = this.state;
+    const protocolosHistory = Object.entries(history.servers.all.protocols);
+    const protocolosRealtime = Object.entries(realtime.servers.all.protocols);
+    const mapa = {};
+
+    protocolosHistory.map(protocolo => {
+      mapa[protocolo[0]] = { recorde: protocolo[1] };
+    });
+
+    protocolosRealtime.map(protocolo => {
+      mapa[protocolo[0]] = {
+        recorde: (mapa[protocolo[0]] && mapa[protocolo[0]].recorde) || 0,
+        total: protocolo[1] || 0
+      };
+    });
+
+    const data = Object.entries(mapa).map(o => {
+      return { name: `${o[0]}`, ...o[1] };
+    });
+
+    return data;
+  }
+
   unmount() {
     clearInterval(this.interval);
   }

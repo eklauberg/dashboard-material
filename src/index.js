@@ -5,7 +5,6 @@ import { App } from "./views";
 import registerServiceWorker from "./registerServiceWorker";
 import { Router, Route } from "react-router";
 import createHistory from "history/createBrowserHistory";
-
 class Root extends React.Component {
   render() {
     const history = createHistory();

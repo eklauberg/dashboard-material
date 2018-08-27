@@ -5,13 +5,21 @@
   "dependencies": {
     "@material-ui/core": "^1.5.1",
     "@material-ui/icons": "^2.0.3",
+    "@nivo/bar": "^0.46.0",
+    "@nivo/heatmap": "^0.46.0",
+    "@nivo/line": "^0.46.0",
     "classnames": "^2.2.6",
     "history": "^4.7.2",
+    "moment": "^2.22.2",
     "react": "^16.4.2",
+    "react-charts": "^1.0.10",
     "react-dom": "^16.4.2",
+    "react-moment": "^0.7.9",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "react-select": "^2.0.0",
+    "recharts": "^1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
